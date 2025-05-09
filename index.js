@@ -9,6 +9,7 @@ const contactListRoutes = require("./routes/contactListRoutes");
 const investorRoutes = require("./routes/investorRoutes");
 const emailRoutes = require("./routes/emailRoutes");
 const reportRoutes = require("./routes/reportRoutes");
+const clientVerificationRoutes = require("./routes/clientVerificationRoutes");
 
 
 // Import middleware
@@ -23,14 +24,14 @@ const app = express();
 app.use(cors({
   origin: [
     "https://email-sender-1fae3.web.app",
-    "http://localhost:5174"
+    "http://localhost:5175"
   ],
   credentials: true
 }));
 app.use(express.json());
 // Routes
 app.use("/clients", clientRoutes);
-
+app.use('/clients', clientVerificationRoutes);
 app.use("/campaign", campaignRoutes);
 app.use("/contact-lists", contactListRoutes);
 app.use("/investors", investorRoutes);
