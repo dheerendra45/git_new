@@ -24,7 +24,7 @@ const app = express();
 app.use(cors({
   origin: [
     "https://email-sender-1fae3.web.app",
-    "http://localhost:5175"
+    "http://localhost:5173"
   ],
   credentials: true
 }));
